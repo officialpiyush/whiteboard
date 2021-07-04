@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  position: relative;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(259, 0%, 92%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+
+.tool-bar {
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px -4px #cccccc;
+  position: absolute;
+  bottom: 2vw;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  padding: 12px 16px;
+  background: whitesmoke;
+}
+
+button:hover {
+  background: rgb(228, 228, 228);
+  border-radius: 4px;
+}
+
+button i {
+  font-size: 1.42rem;
+}
+
+.active {
+  background: rgb(228, 228, 228);
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch,
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 1.42rem;
+  border: 1px solid #888888;
+}
+
+input[type="range"] {
+  border: none;
+  width: 80px;
+}
