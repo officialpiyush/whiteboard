@@ -157,6 +157,12 @@ export default function Home() {
             <i className="ri-download-2-fill"></i>
           </button>
         </Tippy>
+
+        <Tippy content="Source">
+          <button onClick={() => window.open("https://github.com/officialpiyush/whiteboard", "_blank")}>
+            <i className="ri-github-fill"></i>
+          </button>
+        </Tippy>
       </div>
     </div>
   );
