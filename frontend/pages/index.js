@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Tippy from "@tippyjs/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import "tippy.js/dist/tippy.css";
 
@@ -14,6 +14,7 @@ export default function Home() {
   const [painting, setPainting] = useState(false);
   const [canvas, setCanvas] = useState(null);
   const [ctx, setCtx] = useState(null);
+  const colorRef = useRef(null);
 
   const updateWidthAndHeight = () => {
     setWidth(window.innerWidth);
@@ -76,6 +77,10 @@ export default function Home() {
     a.click();
   };
 
+  const handleClr = () => {
+    colorRef.current.click();
+  };
+
   return (
     <div className="container">
       <Head>
@@ -109,8 +114,14 @@ export default function Home() {
 
       <div className="tool-bar">
         <Tippy content="Picker">
-          <button id="picker">
-            <input onChange={onColorChange} type="color" name="" id="" />
+          <button id="picker" onClick={handleClr}>
+            <input
+              onChange={onColorChange}
+              ref={colorRef}
+              type="color"
+              name=""
+              id=""
+            />
           </button>
         </Tippy>
         <Tippy content="Pen">
