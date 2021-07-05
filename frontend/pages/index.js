@@ -89,13 +89,11 @@ export default function Home() {
 
       <canvas
         onTouchEnd={() => {
-          console.log("lifted");
           setPainting(false);
           ctx.beginPath();
         }}
         onTouchStart={() => {
           setPainting(true);
-          console.log("touched");
         }}
         onTouchMove={(e) => draw(e.touches[0])}
         onMouseUp={() => {
