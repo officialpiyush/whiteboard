@@ -51,6 +51,7 @@ export default function Home() {
   };
 
   const clearCanvas = () => {
+    setPainting(false)
     ctx.clearRect(
       0,
       0,
@@ -159,7 +160,14 @@ export default function Home() {
         </Tippy>
 
         <Tippy content="Source">
-          <button onClick={() => window.open("https://github.com/officialpiyush/whiteboard", "_blank")}>
+          <button
+            onClick={() =>
+              window.open(
+                "https://github.com/officialpiyush/whiteboard",
+                "_blank"
+              )
+            }
+          >
             <i className="ri-github-fill"></i>
           </button>
         </Tippy>
