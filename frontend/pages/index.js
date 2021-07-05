@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   const clearCanvas = () => {
-    setPainting(false)
+    setPainting(false);
     ctx.clearRect(
       0,
       0,
@@ -88,6 +88,16 @@ export default function Home() {
       </Head>
 
       <canvas
+        onTouchEnd={() => {
+          console.log("lifted");
+          setPainting(false);
+          ctx.beginPath();
+        }}
+        onTouchStart={() => {
+          setPainting(true);
+          console.log("touched");
+        }}
+        onTouchMove={(e) => draw(e.touches[0])}
         onMouseUp={() => {
           setPainting(false);
           ctx.beginPath();
